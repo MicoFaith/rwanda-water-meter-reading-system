@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: rwanda-water-meter-reading
+    runtime: python
+    rootDir: hf_space
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py

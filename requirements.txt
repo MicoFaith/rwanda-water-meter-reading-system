@@ -1,0 +1,14 @@
+# Web API
+Flask==3.1.0
+Werkzeug==3.1.3
+
+# Inference / ML pipeline (already used by 01-05 scripts)
+ultralytics==8.4.51
+torch==2.12.0
+torchvision==0.27.0
+opencv-python==4.13.0.92
+pillow==12.2.0
+numpy==2.4.4
+
+# Labeling GUI (01_label_images.py)
+PySide6==6.11.1

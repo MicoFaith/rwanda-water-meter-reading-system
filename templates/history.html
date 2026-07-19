@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMRS — Reading History</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card card--wide">
+    <header class="card__header">
+      <div class="header__row">
+        <h1>Reading History</h1>
+        <a href="/" class="btn btn--secondary">New Reading</a>
+      </div>
+      <p class="subtitle">Most recent meter readings, newest first.</p>
+    </header>
+
+    <div id="historyLoading" class="loading">
+      <span class="spinner"></span>
+      <span>Loading readings…</span>
+    </div>
+
+    <p id="historyEmpty" class="subtitle" hidden>No readings recorded yet.</p>
+    <p id="historyError" class="result result--error" hidden></p>
+
+    <div class="table-wrap">
+      <table id="historyTable" class="table" hidden>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Image</th>
+            <th>Reading</th>
+            <th>Confidence</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='history.js') }}"></script>
+</body>
+</html>

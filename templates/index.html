@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMRS — Meter Reading</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <header class="card__header">
+      <div class="header__row">
+        <h1>Water Meter Reading</h1>
+        <a href="/history" class="btn btn--secondary">History</a>
+      </div>
+      <p class="subtitle">Upload a photo of the meter to get an automatic reading.</p>
+    </header>
+
+    <section id="dropzone" class="dropzone">
+      <input type="file" id="fileInput" accept="image/*" hidden>
+      <div id="dropzoneContent" class="dropzone__content">
+        <span class="dropzone__icon">&#128247;</span>
+        <p>Drag &amp; drop an image here, or</p>
+        <button type="button" id="browseBtn" class="btn btn--secondary">Choose Image</button>
+      </div>
+      <img id="preview" class="preview" alt="Selected meter image" hidden>
+    </section>
+
+    <button type="button" id="predictBtn" class="btn btn--primary" disabled>Predict Reading</button>
+
+    <div id="loading" class="loading" hidden>
+      <span class="spinner"></span>
+      <span>Running prediction…</span>
+    </div>
+
+    <section id="result" class="result" hidden></section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

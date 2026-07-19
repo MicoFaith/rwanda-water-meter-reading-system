@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# App runtime data
+wmrs.db
+logs/
+*.tmp
+
+# Datasets / model weights (large binaries — do not commit)
+dataset/
+dataset_colab/
+dataset_colab.zip
+raw_dataset/
+new_dataset/
+runs/
+prediction_outputs/
+quick_test_output/
+*.pt
+# Deployed MVP needs its own copy of the model committed
+!hf_space/best.pt
+
+# Claude Code local session artifacts — not part of the project
+.claude/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
